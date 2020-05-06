@@ -19,20 +19,8 @@ const listCategoryMap = (productsList) =>
 const categoryUnique = (categories) => [...new Set(categories)];
 
 // type promotion
-const promotionType = (categories, promotions) => {
-  switch (categories.length) {
-    case 1:
-      return promotions[0];
-    case 2:
-      return promotions[1];
-    case 3:
-      return promotions[2];
-    case 4:
-      return promotions[3];
-    default:
-      return 'EMPTY';
-  }
-};
+const promotionType = (categories, promotions) =>
+  promotions[categories.length - 1];
 
 // total buy
 const totCart = (products, promotion, checkDescont) => {
